@@ -22,17 +22,32 @@ public class Split{
 		
 		
 
-		System.out.println(sandwhichCase1("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
+		System.out.println(sandwhichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
 	}
-	public static String sandwhichCase1(String input){
-
+	public static String sandwhichCaseNoSpaces(String input){
+ 
 		//Your task:
 		/*Write a method that take in a string like "applespineapplesbreadlettustomatobaconmayohambreadcheese" describing a sandwich
 		* use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		* What if it's a fancy sandwich with multiple pieces of bread?
 		*/
+		String inside ="";
 		String[] sandwhich = input.split("bread");
-		return sandwhich[1];
+		for(int i=1;i<sandwhich.length-1;i++) {
+			inside=inside+sandwhich[i];
+			}
+		/*if(sandwhich.length==3) {
+			for(int i=1;i<sandwhich.length-1;i++) {
+				inside=inside+sandwhich[i];
+				}
+		}else {
+			for(int i=1;i<sandwhich.length;i++) {
+				inside=inside+sandwhich[i];
+			}
+		}*/
+	
+		//return Arrays.toString(sandwhich);
+		return inside;
 	}
 
 	/*Write a method that take in a string like "apples pineapples bread lettus tomato bacon mayo ham bread cheese" describing a sandwich
