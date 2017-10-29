@@ -22,11 +22,11 @@ public class Split {
 		System.out.println(Arrays.toString(testCase2));
 		System.out.println(Arrays.toString(testCase3));
 
-		System.out.println(sandwhichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
-		System.out.println(sandwhichCaseWithSpaces("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
+		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
+		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
 	}
 
-	public static String sandwhichCaseNoSpaces(String input) {
+	public static String sandwichCaseNoSpaces(String input) {
 
 		// Your task:
 		/*
@@ -37,17 +37,17 @@ public class Split {
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		 */
 		String inside = "";
-		String[] sandwhich = input.split("bread");
-		for (int i = 1; i < sandwhich.length - 1; i++) {
-			inside = inside + sandwhich[i];
+		String[] sandwich = input.split("bread");
+		for (int i = 1; i < sandwich.length - 1; i++) {
+			inside = inside + sandwich[i];
 		}
 		/*
-		 * if(sandwhich.length==3) { for(int i=1;i<sandwhich.length-1;i++) {
-		 * inside=inside+sandwhich[i]; } }else { for(int i=1;i<sandwhich.length;i++) {
-		 * inside=inside+sandwhich[i]; } }
+		 * if(sandwhich.length==3) { for(int i=1;i<sandwich.length-1;i++) {
+		 * inside=inside+sandwich[i]; } }else { for(int i=1;i<sandwhich.length;i++) {
+		 * inside=inside+sandwich[i]; } }
 		 */
 
-		// return Arrays.toString(sandwhich);
+		// return Arrays.toString(sandwich);
 		return inside;
 	}
 
@@ -59,29 +59,29 @@ public class Split {
 	 * what's on the outside Again, what if it's a fancy sandwich with multiple
 	 * pieces of bread?
 	 */
-	public static String sandwhichCaseWithSpaces(String input) {
-		String[] sandwhich = input.split(" ");
+	public static String sandwichCaseWithSpaces(String input) {
+		String[] sandwich = input.split(" ");
 		String result = "";
 		int firstIndex = 0;
 		int secondIndex = 0;
-		for (int i = 0 ; firstIndex == 0 && !sandwhich[0].equals("bread"); i++) {
-			if (sandwhich[i].equals("bread")) {
+		for (int i = 0 ; firstIndex == 0 && !sandwich[0].equals("bread"); i++) {
+			if (sandwich[i].equals("bread")) {
 				firstIndex = i;
 			}
 		}
-		for (int i = sandwhich.length - 1; secondIndex == 0; i--) {
-			if (sandwhich[i].equals("bread")) {
+		for (int i = sandwich.length - 1; secondIndex == 0; i--) {
+			if (sandwich[i].equals("bread")) {
 				secondIndex = i;
 			}
 		}
 		for (int i = firstIndex+1; i < secondIndex; i++) {
 			//result = result+sandwhich[i]+" " ;
-			if (!sandwhich[i].equals("bread")) {
-				result = result+sandwhich[i]+" " ;
+			if (!sandwich[i].equals("bread")) {
+				result = result+sandwich[i]+" " ;
 			}
 		}
 		return result;
-		//return Arrays.toString(sandwhich);
+		//return Arrays.toString(sandwich);
 	}
 
 }
