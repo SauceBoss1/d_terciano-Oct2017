@@ -23,7 +23,7 @@ public class Split {
 		System.out.println(Arrays.toString(testCase3));
 
 		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
-		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
+		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"));
 	}
 
 	public static String sandwichCaseNoSpaces(String input) {
@@ -50,7 +50,7 @@ public class Split {
 		// return Arrays.toString(sandwich);
 		return inside;
 	}
-
+	
 	/*
 	 * Write a method that take in a string like
 	 * "apples pineapples bread lettus tomato bacon mayo ham bread cheese"
@@ -75,7 +75,7 @@ public class Split {
 			}
 		}
 		for (int i = firstIndex+1; i < secondIndex; i++) {
-			//result = result+sandwhich[i]+" " ;
+			//result = result+sandwich[i]+" " ;
 			if (!sandwich[i].equals("bread")) {
 				result = result+sandwich[i]+" " ;
 			}
