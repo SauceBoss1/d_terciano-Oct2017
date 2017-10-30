@@ -22,11 +22,11 @@ public class Split {
 		System.out.println(Arrays.toString(testCase2));
 		System.out.println(Arrays.toString(testCase3));
 
-		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
-		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"));
+		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese","bread"));
+		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"," "));
 	}
 
-	public static String sandwichCaseNoSpaces(String input) {
+	public static String sandwichCaseNoSpaces(String input,String split) {
 
 		// Your task:
 		/*
@@ -37,17 +37,28 @@ public class Split {
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		 */
 		String inside = "";
-		String[] sandwich = input.split("bread");
-		for (int i = 1; i < sandwich.length - 1; i++) {
-			inside = inside + sandwich[i];
+		String[] sandwich = input.split(split);
+		if (sandwich.length==3) {
+			for (int i = 1; i < sandwich.length - 1; i++) {	
+				inside = inside + sandwich[i];
+			}
+			
+		} else {
+			int lastPiece = 1;
+			for (int i = lastPiece; i < sandwich.length - 2; i++) {
+				inside = inside + sandwich[i]+"bread";
+				lastPiece=i;
+			}
+			inside = inside + sandwich[lastPiece+1];
 		}
+			
 		/*
 		 * if(sandwhich.length==3) { for(int i=1;i<sandwich.length-1;i++) {
 		 * inside=inside+sandwich[i]; } }else { for(int i=1;i<sandwhich.length;i++) {
 		 * inside=inside+sandwich[i]; } }
 		 */
 
-		// return Arrays.toString(sandwich);
+		 //return Arrays.toString(sandwich);
 		return inside;
 	}
 	
@@ -59,8 +70,8 @@ public class Split {
 	 * what's on the outside Again, what if it's a fancy sandwich with multiple
 	 * pieces of bread?
 	 */
-	public static String sandwichCaseWithSpaces(String input) {
-		String[] sandwich = input.split(" ");
+	public static String sandwichCaseWithSpaces(String input,String split) {
+		String[] sandwich = input.split(split);
 		String result = "";
 		int firstIndex = 0;
 		int secondIndex = 0;
@@ -75,10 +86,10 @@ public class Split {
 			}
 		}
 		for (int i = firstIndex+1; i < secondIndex; i++) {
-			//result = result+sandwich[i]+" " ;
-			if (!sandwich[i].equals("bread")) {
+			result = result+sandwich[i]+" " ;
+			/*if (!sandwich[i].equals("bread")) {
 				result = result+sandwich[i]+" " ;
-			}
+			}*/
 		}
 		return result;
 		//return Arrays.toString(sandwich);
