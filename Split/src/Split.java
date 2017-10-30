@@ -23,7 +23,7 @@ public class Split {
 		System.out.println(Arrays.toString(testCase3));
 
 		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobreadbaconmayohambreadcheese","bread"));
-		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"," "));
+		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"," ","bread"));
 	}
 
 	public static String sandwichCaseNoSpaces(String input,String split) {
@@ -37,14 +37,14 @@ public class Split {
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		 */
 		String inside = "";
-		String[] sandwich = input.split(split);
-		if (sandwich.length==3) {
-			for (int i = 1; i < sandwich.length - 1; i++) {	
+		String[] sandwich = input.split(split);//splits the code up
+		if (sandwich.length==3) {//checks if length ==3
+			for (int i = 1; i < sandwich.length - 1; i++) {	// traverses through array and puts each necessary element into a string
 				inside = inside + sandwich[i];
 			}
 			
-		} else {
-			int lastPiece = 1;
+		} else { //this does the same thing above except it puts bread when there are multiple pieces of bread
+			int lastPiece = 1;//prime scoped variable
 			for (int i = lastPiece; i < sandwich.length - 2; i++) {
 				inside = inside + sandwich[i]+"bread";
 				lastPiece=i;
@@ -70,28 +70,28 @@ public class Split {
 	 * what's on the outside Again, what if it's a fancy sandwich with multiple
 	 * pieces of bread?
 	 */
-	public static String sandwichCaseWithSpaces(String input,String split) {
-		String[] sandwich = input.split(split);
-		String result = "";
-		int firstIndex = 0;
-		int secondIndex = 0;
-		for (int i = 0 ; firstIndex == 0 && !sandwich[0].equals("bread"); i++) {
-			if (sandwich[i].equals("bread")) {
+	public static String sandwichCaseWithSpaces(String input,String split,String lookFor) {
+		String[] sandwich = input.split(split);//splits input into array
+		String result = "";//stores the result
+		int firstIndex = 0;//stroes the first index of bread
+		int secondIndex = 0;//stores the last index of bread
+		for (int i = 0 ; firstIndex == 0 && !sandwich[0].equals(lookFor); i++) {//finds the first bread
+			if (sandwich[i].equals(lookFor)) {
 				firstIndex = i;
 			}
 		}
-		for (int i = sandwich.length - 1; secondIndex == 0; i--) {
-			if (sandwich[i].equals("bread")) {
+		for (int i = sandwich.length - 1; secondIndex == 0; i--) {//finds the second bread
+			if (sandwich[i].equals(lookFor)) {
 				secondIndex = i;
 			}
 		}
-		for (int i = firstIndex+1; i < secondIndex; i++) {
+		for (int i = firstIndex+1; i < secondIndex; i++) {//returns everything in between the bread and then stores it into a string
 			result = result+sandwich[i]+" " ;
 			/*if (!sandwich[i].equals("bread")) {
 				result = result+sandwich[i]+" " ;
 			}*/
 		}
-		return result;
+		return result;//returns the final result
 		//return Arrays.toString(sandwich);
 	}
 
