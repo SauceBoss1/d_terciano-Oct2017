@@ -22,7 +22,7 @@ public class Split {
 		System.out.println(Arrays.toString(testCase2));
 		System.out.println(Arrays.toString(testCase3));
 
-		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese","bread"));
+		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobreadbaconmayohambreadcheese","bread"));
 		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"," "));
 	}
 
