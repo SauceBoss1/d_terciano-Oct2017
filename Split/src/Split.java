@@ -30,7 +30,11 @@ public class Split {
 		System.out.println(Arrays.toString(testCase3));
 
 		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobreadbaconmayohambreadcheese","bread"));
+		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobreadbaconbreadmayohambreadcheese","bread"));
+		System.out.println(sandwichCaseNoSpaces("applespineapplesbreadlettustomatobaconmayohambreadcheese","bread"));
 		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bread bacon mayo ham bread cheese"," ","bread"));
+		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus bread tomato bread bacon mayo ham bread cheese"," ","bread"));
+		System.out.println(sandwichCaseWithSpaces("apples pineapples bread lettus tomato bacon mayo ham bread cheese"," ","bread"));
 	}
 
 	public static String sandwichCaseNoSpaces(String input,String split) {
@@ -46,17 +50,18 @@ public class Split {
 		String inside = "";
 		String[] sandwich = input.split(split);//splits the code up
 		
-		
-		
 		/*
 		 * This code traverses through the array and removes the bread that's in the middle
 		 */
-		/*for (int i = 1; i < sandwich.length - 1; i++) {	// traverses through array and puts each necessary element into a string
+		for (int i = 1; i < sandwich.length - 1; i++) {	// traverses through array and puts each necessary element into a string
 			inside = inside + sandwich[i];
-		}*/
+		}
 		
-		
-		if (sandwich.length==3) {//checks if length ==3
+		/*
+		 * This code traverses through the array and adds the bread that's in the middle
+		 * Please ignore this piece of code
+		 */
+		/*if (sandwich.length==3) {//checks if length ==3
 			for (int i = 1; i < sandwich.length - 1; i++) {	// traverses through array and puts each necessary element into a string
 				inside = inside + sandwich[i];
 			}
@@ -68,7 +73,7 @@ public class Split {
 				lastPiece=i;
 			}
 			inside = inside + sandwich[lastPiece+1];
-		}
+		}*/
 			
 
 		 //return Arrays.toString(sandwich);
@@ -99,10 +104,10 @@ public class Split {
 			}
 		}
 		for (int i = firstIndex+1; i < secondIndex; i++) {//returns everything in between the bread and then stores it into a string
-			result = result+sandwich[i]+" " ;
-			/*if (!sandwich[i].equals("bread")) {
+			//result = result+sandwich[i]+" " ;
+			if (!sandwich[i].equals("bread")) {
 				result = result+sandwich[i]+" " ;
-			}*/
+			}
 		}
 		return result;//returns the final result
 		//return Arrays.toString(sandwich);
