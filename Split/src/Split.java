@@ -1,3 +1,10 @@
+/*
+ * Author: Derfel terciano
+ * Version: 1
+ * 
+ * This splits the string.
+ * 
+ */
 import java.util.*;
 
 public class Split {
@@ -38,6 +45,17 @@ public class Split {
 		 */
 		String inside = "";
 		String[] sandwich = input.split(split);//splits the code up
+		
+		
+		
+		/*
+		 * This code traverses through the array and removes the bread that's in the middle
+		 */
+		/*for (int i = 1; i < sandwich.length - 1; i++) {	// traverses through array and puts each necessary element into a string
+			inside = inside + sandwich[i];
+		}*/
+		
+		
 		if (sandwich.length==3) {//checks if length ==3
 			for (int i = 1; i < sandwich.length - 1; i++) {	// traverses through array and puts each necessary element into a string
 				inside = inside + sandwich[i];
@@ -52,11 +70,6 @@ public class Split {
 			inside = inside + sandwich[lastPiece+1];
 		}
 			
-		/*
-		 * if(sandwhich.length==3) { for(int i=1;i<sandwich.length-1;i++) {
-		 * inside=inside+sandwich[i]; } }else { for(int i=1;i<sandwhich.length;i++) {
-		 * inside=inside+sandwich[i]; } }
-		 */
 
 		 //return Arrays.toString(sandwich);
 		return inside;
