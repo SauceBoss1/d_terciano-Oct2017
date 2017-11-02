@@ -42,6 +42,7 @@ public class LotsOfCopies {
 		 * 
 		 */
 		System.out.println("\n\nQuestion 2");
+		String str ="10";
 		int a =0;
 		int b=0;
 		a=num;
@@ -49,6 +50,10 @@ public class LotsOfCopies {
 		a+=1;
 		System.out.println(b);
 		System.out.println();
+		String bStr= str;
+		str ="hi";
+		System.out.println("bStr: "+bStr);
+		
 		int a2 = 0;
 		int b2=0;
 		a2=arrMain[3];
