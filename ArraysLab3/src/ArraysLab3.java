@@ -10,23 +10,31 @@ import java.util.Arrays;
 public class ArraysLab3 {
 
 	public static void main(String[] args) {
-		int[] a1 = { 5, 10, 15, 20, 25, 30, 35, 40 };//1
-		int[] a2 = { 7, 14, 21, 28, 35, 42, 49, 56 };//1
-		int[] sumArr = sum(a1, a2);//2
-		int appendNum = 200;//3
-		int[] appendArr = append(a1, appendNum);//4
-		int removeIdx = 5;//5
-		int[] removeArr = remove(a2,removeIdx);//6
-		int sumOfEvens = sumEven(appendArr);//7
+		int[] a1 = { 5, 10, 15, 20, 25, 30, 35, 40 };// Task1
+		int[] a2 = { 7, 14, 21, 28, 35, 42, 49, 56 };// Task1
+		
+		// print original arrays
+
+		System.out.println("Orginal arrays: \n");
+		System.out.println("Array 1: " + Arrays.toString(a1));
+		System.out.println("Array 2: " + Arrays.toString(a2));
+
+		int[] sumArr = sum(a1, a2);// Task2
+		int appendNum = 200;// Task3
+		int[] appendArr = append(a1, appendNum);// Task4
+		int removeIdx = 5;// Task5
+		int[] removeArr = remove(a2, removeIdx);// Task6
+		int sumOfEvens = sumEven(appendArr);// Task7
 		rotateRight(a1);
-		
-		//printing statements
-		System.out.println(Arrays.toString(sumArr));
-		System.out.println(Arrays.toString(appendArr));
-		System.out.println(Arrays.toString(removeArr));
-		System.out.println(sumOfEvens);
-		System.out.println(Arrays.toString(a1));
-		
+
+		// printing statements result
+		System.out.println("results after using the methods:\n");
+		System.out.println("sumArr: " + Arrays.toString(sumArr));
+		System.out.println("appendArr: " + Arrays.toString(appendArr));
+		System.out.println("removeArr: " + Arrays.toString(removeArr));
+		System.out.println("sumOfEvens: " + sumOfEvens);
+		System.out.println("rotateRight: " + Arrays.toString(a1));
+
 	}
 
 	public static int[] sum(int[] arr1, int[] arr2) {
@@ -68,7 +76,7 @@ public class ArraysLab3 {
 
 	public static void rotateRight(int[] arr) {
 		int lastValue = arr[arr.length - 1];
-		for (int i = arr.length-1; i > 0; i--) {
+		for (int i = arr.length - 1; i > 0; i--) {
 			arr[i] = arr[i - 1];
 		}
 		arr[0] = lastValue;
